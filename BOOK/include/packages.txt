@@ -1,0 +1,17 @@
+
+.. |binutils_ver| replace:: 2.42
+.. |busybox_ver| replace:: 1.36.1
+.. |bootscripts_ver| replace:: git master HEAD
+.. |gcc_ver| replace:: 13.2.0
+.. |gmp_ver| replace:: 6.3.0
+.. |iana_ver| replace:: 20240125
+.. |linux_ver| replace:: 6.7.4
+.. |mpc_ver| replace:: 1.3.1
+.. |mpfr_ver| replace:: 4.2.1
+.. |musl_ver| replace:: 1.2.5
+
+
+.. |dropbear_ver| replace:: 2022.83
+.. |netplug_ver|  replace:: 1.2.9.2
+.. |wirelesstools_ver| replace:: 29
+.. |zlib_ver| replace:: 1.3.1
