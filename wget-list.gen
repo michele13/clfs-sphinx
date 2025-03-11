@@ -1,0 +1,12 @@
+#!/bin/sh
+
+BUILDDIR=$(pwd)/build
+O=${BUILDDIR}/wget-list.tmp
+
+echo 'Generating "All Packages" page...'
+sphinx-build -M text BOOK $O BOOK/materials/packages.rst > /dev/null
+
+echo 'Extracting urls from page...'
+grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' > ${BUILDDIR}/wget-list
+echo 'DONE!'
+echo "The file is in ${BUILDDIR}/wget-list"
