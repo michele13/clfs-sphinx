@@ -58,4 +58,4 @@ Total size of these packages: about 253 MB
 
 
 
-.. include:: ../include/packages.txt
+

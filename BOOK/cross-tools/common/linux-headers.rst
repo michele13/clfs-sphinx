@@ -21,7 +21,7 @@ Install the header files that are common to all architectures:
 --------------------------------
 
 
-| **Installed headers:**    ${CLFS}/cross-tools/${CLFS_TARGET}/include/{asm,asm-generic,drm,linux,mtd,rdma,scsi,sound,video,xen}/*.h
+| **Installed headers:**       ${CLFS}/cross-tools/${CLFS_TARGET}/include/{asm,asm-generic,drm,linux,mtd,rdma,scsi,sound,video,xen}/\*.h
 
 Short Descriptions
 ~~~~~~~~~~~~~~~~~~
