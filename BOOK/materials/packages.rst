@@ -47,12 +47,12 @@ Download or otherwise obtain the following packages:
 | **MPFR** (|mpfr_ver|) - 1459 KB:
 | Home page: http://www.mpfr.org/
 | Download: http://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
-| MD5 sum: `523c50c6318dde6f9dc523bc0244690a``
+| MD5 sum: `523c50c6318dde6f9dc523bc0244690a`
 
 | **musl** (|musl_ver|) - 1055 KB:
 | Home page: https://musl.libc.org/
 | Download: https://musl.libc.org/releases/musl-1.2.5.tar.gz
-| MD5 sum: `ac5cfde7718d0547e224247ccfe59f18``
+| MD5 sum: `ac5cfde7718d0547e224247ccfe59f18`
 
 Total size of these packages: about 253 MB 
 
