@@ -8,5 +8,27 @@ sphinx-build -M text BOOK $O BOOK/materials/packages.rst > /dev/null
 
 echo 'Extracting urls from page...'
 grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' > ${BUILDDIR}/wget-list
+
+# Md5sum
+echo "Generating MD5sums"
+rm -f ${BUILDDIR}/md5sums
+
+# Define space-separated lists (simulating arrays)
+md5_array="$(grep -i "MD5 sum:"  $O/text/materials/packages.txt | awk '{ print $3 }' | sed -E 's|\*([a-z0-9]+)\*|\1|g')"
+filename_array="$(grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' | rev | cut -d "/" -f1 | rev )" 
+
+# Use set to iterate over both "arrays"
+set -- $filename_array
+for md5 in $md5_array; do
+    if [ "$md5" != '*N/A*' ]; then
+    echo "$md5\t$1" >> ${BUILDDIR}/md5sums
+    fi
+    shift # move to the next element of $filename_array
+done
+
+echo ""
 echo 'DONE!'
 echo "The file is in ${BUILDDIR}/wget-list"
+echo ""
+echo 'DONE!'
+echo "The md5sum file is in ${BUILDDIR}/md5sums"
