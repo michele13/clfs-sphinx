@@ -3,19 +3,33 @@
 BUILDDIR=$(pwd)/build
 O=${BUILDDIR}/wget-list.tmp
 
-echo 'Generating "All Packages" page...'
-sphinx-build -M text BOOK $O BOOK/materials/packages.rst > /dev/null
+rm ${BUILDDIR}/wget-list
+
+echo 'Generating pages...'
+pages="materials/packages materials/patches beyond/packages beyond/patches"
 
 echo 'Extracting urls from page...'
-grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' > ${BUILDDIR}/wget-list
+for page in $pages; do
+    sphinx-build -M text BOOK $O BOOK/$page.rst > /dev/null
+    #sphinx-build -M text BOOK $O BOOK/materials/patches.rst > /dev/null
+
+    
+    grep -i Download: $O/text/$page.txt | awk '{ print $2 }' >> ${BUILDDIR}/wget-list
+    #grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' >> ${BUILDDIR}/wget-list
+
+done
 
 # Md5sum
 echo "Generating MD5sums"
 rm -f ${BUILDDIR}/md5sums
 
 # Define space-separated lists (simulating arrays)
-md5_array="$(grep -i "MD5 sum:"  $O/text/materials/packages.txt | awk '{ print $3 }' | sed -E 's|\*([a-z0-9]+)\*|\1|g')"
-filename_array="$(grep -i Download: $O/text/materials/packages.txt | awk '{ print $2 }' | rev | cut -d "/" -f1 | rev )" 
+
+for page in $pages; do
+md5_array="$md5_array $(grep -i "MD5 sum:"  $O/text/$page.txt | awk '{ print $3 }' | sed -E 's|\*([a-z0-9]+)\*|\1|g')"
+filename_array="$filename_array $(grep -i Download: $O/text/$page.txt | awk '{ print $2 }' | rev | cut -d "/" -f1 | rev )" 
+done
+
 
 # Use set to iterate over both "arrays"
 set -- $filename_array
