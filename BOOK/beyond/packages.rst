@@ -21,6 +21,6 @@ Download or otherwise obtain the following packages:
 | **Zlib** (|zlib_ver|) - 1478 KB:
 | Home page: http://www.zlib.net
 | Download: https://zlib.net/fossils/zlib-1.3.1.tar.gz
-| MD5 sum: `9855b6d802d7fe5b7bd5b196a2271655``
+| MD5 sum: `9855b6d802d7fe5b7bd5b196a2271655`
 
 Total size of these packages: about 4,055 KB 
