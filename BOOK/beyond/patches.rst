@@ -9,6 +9,6 @@ build the associated packages:
 
 | **Netplug Patch** - 1 KB:
 | Download: http://patches.clfs.org/embedded-dev/netplug-1.2.9.2-fixes-1.patch
-| MD5 sum:
+| MD5 sum:  `5c05a1071fe15a45b8b77557924aa73b`
 
 Total size of these patches: about 1 KB 
