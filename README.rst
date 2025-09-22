@@ -7,4 +7,4 @@ Installation
 
   python3 -m venv .venv
   . .venv/bin/activate
-  python -m pip install sphinx sphinx-autobuild
+  python -m pip install sphinx furo sphinx-autobuild
