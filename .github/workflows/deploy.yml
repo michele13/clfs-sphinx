@@ -33,7 +33,7 @@ jobs:
         - name: Deploy latest
           uses:  peaceiris/actions-gh-pages@v4
           with:
-              external-repository: michele13/michele13.github.io
+              external_repository: michele13/michele13.github.io
               publish_branch: main
               publish_dir: build/html
               destination_dir: clfs-sphinx/latest
