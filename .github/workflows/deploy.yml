@@ -1,0 +1,40 @@
+name: Deploy & Build Sphinx Docs
+
+on:
+   push:
+     branches:
+     - main # or 'master' depending on your default branch
+
+jobs:
+   build:
+      runs-on: ubuntu-latest
+      steps:
+         # Checkout source repo
+        - name: Checkout source
+          uses: actions/checkout@v4
+
+          # Setup Python
+        - name: Setup Python 3.x
+          uses: actions/setup-python@v5
+          with:
+             python-version: "3.x"  
+
+        # Install dependencies (Sphynx)
+        - name: Setup Sphynx
+          run:  pip install -U sphinx sphinx-rtd-theme
+
+        # Build Sphynx HTML
+
+        - name: Build HTML
+          run:  make html
+    
+        # Deploy to micheele13.github.io/clfs-sphinx/latest
+
+        - name: Deploy latest
+          uses:  peaceiris/actions-gh-pages@v4
+          with:
+              external-repository: michele13/michele13.github.io
+              publish_branch: main
+              publish_dir: build/html
+              destination_dir: clfs-sphinx/latest
+              personal_token: ${{ secrets.DEPLOY_TOKEN }}
