@@ -21,7 +21,7 @@ jobs:
 
         # Install dependencies (Sphynx)
         - name: Setup Sphynx
-          run:  pip install -U sphinx sphinx-rtd-theme
+          run:  pip install -U sphinx  furo sphinx-rtd-theme
 
         # Build Sphynx HTML
 
